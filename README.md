@@ -7,13 +7,10 @@
   <br />
  <div/> 
   
-##Description
-  
   There Bots are a bot about the [Hypixel](https://hypixel.net/) Skyblock Bazaar. Bots works with the [Hypixel API (about the skyblock bazaar)](https://api.hypixel.net    /skyblock/bazaar). They works (in [Discord](https://discord.com)) with the slash commands **/**. Bots were created with [Discord.js](https://discord.js.org/), Node.js and [npm](https://www.npmjs.com/).
   
 ## Table of contents
 
-- [Description](#Description)
 - [Installation](#installation)
   
 ##Installation

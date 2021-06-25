@@ -9,8 +9,8 @@ const client = new Discord.Client();
 const config = require('./config.json');
 var stats = JSON.parse(fs.readFileSync('../stats.json'));
 
-const invite_link = "https://discord.com/oauth2/authorize?client_id=852604418095579169&scope=bot%20applications.commands&permissions=2147765248";
-const invite_link_1 = "https://discord.com/oauth2/authorize?client_id=851495184075063336&scope=bot%20applications.commands&permissions=2147765248";
+const invite_link = "https://discord.com/oauth2/authorize?client_id=851495184075063336&scope=bot%20applications.commands&permissions=2147765248";
+const invite_link_2 = "https://discord.com/oauth2/authorize?client_id=852604418095579169&scope=bot%20applications.commands&permissions=2147765248";
 const invite_link_3 = "https://discord.com/oauth2/authorize?client_id=852605107669041162&scope=bot%20applications.commands&permissions=2147765248";
 
 const CommandSize = 97;
@@ -28,7 +28,9 @@ client.once('ready', async () => {
         }
     });
 
-    var item = "polished_pumpkin";
+    //console.log(await client.api.applications(client.user.id).commands.get()); //Get all slash command data
+
+    var item = "enchanted_netherrack";
 
     client.api.applications(client.user.id).commands.post({ //Post a command
         
@@ -40,9 +42,7 @@ client.once('ready', async () => {
             description: "Help command"
         }
     });
-
-    //console.log(await client.api.applications(client.user.id).commands.get()); //Get all slash command data
-    //client.api.applications(client.user.id).commands('852846328286412831').delete(); //Delete a command*/
+    //client.api.applications(client.user.id).commands('851496594418827315').delete(); //Delete a command*/
 
 });
 
@@ -125,9 +125,8 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
                 + '📡 invite link 👉 : ' + invite_link + '\n'
                 + '\n'
                 + 'But do not forget his family 👨‍👨‍👦\n'
-                + client.user.username.replace(' 2', '') + ' 1 👉 : ' + invite_link_1 + '\n'
-                + client.user.username.replace(' 2', '') + ' 3 👉 : ' +
-                invite_link_3 + '\n'               
+                + client.user.username + ' 2 👉 : ' + invite_link_2 + '\n'
+                + client.user.username + ' 3 👉 : ' + invite_link_3 + '\n'               
             );
             emblem.setFooter("By DechireT#0674");
             emblem.setColor('#ffff00');
@@ -264,18 +263,18 @@ function getProduct(json) {
 // Update user/guild bot's stats   \\
 function update_guild_user() {
     stats = JSON.parse(fs.readFileSync('../stats.json'));
-    stats.guilds.guild_bot_2 = client.guilds.cache.size;
-    stats.users.user_bot_2 = client.users.cache.size;
+    stats.guilds.guild_bot_1 = client.guilds.cache.size;
+    stats.users.user_bot_1 = client.users.cache.size;
     saveStatsFile();
 }
 
 // Update all bot's stats  \\
 function update() {
     stats = JSON.parse(fs.readFileSync('../stats.json'));
-    stats.guilds.guild_bot_2 = client.guilds.cache.size;
+    stats.guilds.guild_bot_1 = client.guilds.cache.size;
     stats.requests.global_requests = stats.requests.global_requests + 1;
-    stats.requests.request_bot_2 = stats.requests.request_bot_2 + 1;
-    stats.users.user_bot_2 = client.users.cache.size;
+    stats.requests.request_bot_1 = stats.requests.request_bot_1 + 1;
+    stats.users.user_bot_1 = client.users.cache.size;
     saveStatsFile();
 }
 
